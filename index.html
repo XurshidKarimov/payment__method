@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="blah blah blah">
+    <meta name="keywords" content="blah, key">
+    <link rel="stylesheet" href="style.css">
+    <title>Paying</title>
+</head>
+<body>
+
+<form action="https://echo.htmlacademy.ru/" method="post" enctype="multipart/form-data" class="pay-block">
+        <div class="circles">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <h2 class="pay-block__title">payment method</h2>
+            <label for="visa">
+                <img src="./assets/icons/visa.svg" alt="visa logo">
+                <input id="visa" type="radio" name="pay__type">
+                <span class="cardname" id="cardname">visa</span>
+                <span class="iconbox"></span>
+            </label>
+            <label for="mastercard">
+                <img src="./assets/icons/mastercard.svg" alt="mastercard logo">
+                <input id="mastercard" type="radio" name="pay__type">
+                <span class="cardname" id="cardname">mastercard</span>         
+                <span class="iconbox"></span>
+            </label>
+            <label for="maestro">
+                <img src="./assets/icons/maestro.svg" alt="maestro logo">
+                <input id="maestro" type="radio" name="pay__type">
+                <span class="cardname" id="cardname">maestro</span>
+                <span class="iconbox"></span>
+            </label>
+
+            <a class="next" href="#next">
+                <span>next step</span>
+            </a>
+</form>
+
+</body>
+</html>

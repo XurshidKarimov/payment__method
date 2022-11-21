@@ -1,0 +1,109 @@
+@import "nullstyle.scss";
+
+body {
+    @include flex(center, center);
+    min-height: 100vh;
+    background: url(./assets/img/background.jpg) no-repeat;
+    background-size: cover;
+}
+
+.pay-block {
+    @include flex($fDirection: column);
+    width: 350px;
+    height: 300px;
+    padding-top: 20px;
+    border-radius: 15px;
+    background-color: white;
+    overflow-x: hidden;
+
+    & .circles {
+        @include flex($jContent: center);
+        gap: 0 10px;
+        margin-bottom: 15px;
+
+        & span {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: gray;
+
+            &:not(:first-child) {
+                opacity: .5;
+            }
+        }
+    }
+
+    &__title {
+        @include font(20, 500, inherit, uppercase, #222222);
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    & label {
+        @include flex(center);
+        padding: 0 25px;
+        border-top: 1px solid lightgray;
+        cursor: pointer;
+
+        &:hover span:not(:empty) {
+            opacity: 1;
+        }
+
+        & span:not(:empty) {
+            @include font(12, 700, inherit, uppercase, #222222);
+            opacity: .6;
+            transition: linear .2s;
+
+        }
+
+        & input {
+            margin-left: auto;
+            display: none;
+
+            &:checked~.iconbox {
+                background: url(./assets/icons/check.svg) center no-repeat;
+                background-size: 15px 15px;
+            }
+
+            &:checked+span.cardname {
+                opacity: 1;
+            }
+        }
+
+        & .iconbox {
+            width: 24px;
+            height: 24px;
+            margin-left: auto;
+        }
+    }
+
+    & .next {
+        @include flex(center, center);
+        background-color: cornflowerblue;
+        flex-grow: 1;
+
+        & span {
+            padding-top: 1px;
+            @include font(15, 700, inherit, uppercase, #FFFFFF);
+            display: flex;
+            align-items: center;
+            gap: 0 5px;
+
+            &:after {
+                content: '';
+                display: block;
+                width: 20px;
+                height: 20px;
+                background: url(./assets/icons/arrow.svg) center no-repeat;
+            }
+        }
+
+
+    }
+}
+
+img {
+    width: 50px;
+    height: 50px;
+    margin-right: 25px;
+}
